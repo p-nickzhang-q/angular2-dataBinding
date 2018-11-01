@@ -1,3 +1,22 @@
-<p>
-  bind works!
-</p>
+<button (click)="doOnClick($event)">点击</button>
+<br>
+<img [src]="imgUrl" alt="">
+<br>
+<img src="{{imgUrl}}" alt="">
+<br>
+<input value="Tom" (input)="doOnInput($event)">
+<br>
+<table>
+  <tr>
+    <!-- attr.colspan 绑定html属性值，非dom属性值 -->
+    <td [attr.colspan]="size">test</td>
+  </tr>
+</table>
+<br>
+<div [ngClass]="divClass">
+  TestClass
+</div>
+<br>
+<div [style.color]="isDev ? 'red' : 'yellow'">
+  TestStyle
+</div>
