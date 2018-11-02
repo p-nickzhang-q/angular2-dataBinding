@@ -20,3 +20,24 @@
 <div [style.color]="isDev ? 'red' : 'yellow'">
   TestStyle
 </div>
+<br>
+<input [(ngModel)]="name">
+{{name}}
+<br>
+<p>响应式编程demo</p>
+<input #myfield type="text" (keyup)="onkey(myfield.value)">
+<br>
+<!-- #申明变量，表示当前元素的dom对象 -->
+<input type="text" [formControl]="searchInput">
+<br>
+<p>
+  生日：{{birthday | date:'yyyy-MM-dd HH:mm:ss' | uppercase}}
+</p>
+<p>
+  <!-- 1-4 前面指最小显示几位小数，后面指最多显示几位小数 -->
+  圆周率是：{{pi | number:'2.1-4'}} 
+</p>
+<p>
+  我自己的管道
+  {{size | multiple : 3}}
+</p>
