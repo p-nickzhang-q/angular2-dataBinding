@@ -1,1 +1,24 @@
 <app-bind></app-bind>
+
+<div>
+    父组件
+</div>
+<div>
+    <input type="text" placeholder="请输入股票代码" [(ngModel)]="stock">
+    <!-- <app-order [stockCode]="stock" [amount]="100"></app-order> -->
+</div>
+
+<br>
+子组件输出给父组件
+<div>
+    <app-price-quate (lastPrice)="priceQuoteHandler($event)"></app-price-quate>
+</div>
+<div>
+    报价组价外部，股票代码：{{priceQuate.stockCode}}，股票价格：{{priceQuate.lastPrice}}
+</div>
+<br>
+组件间输出，无父子关系，利用中间人模式
+<div>
+    <app-price-quate (buy)="buyHandler($event)"></app-price-quate>
+    <app-order [stockCode]="stock" [amount]="100" [priceQuote]="priceQuate2"></app-order>
+</div>
